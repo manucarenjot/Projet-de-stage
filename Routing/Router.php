@@ -8,6 +8,11 @@ class Router
     public static function route(string $controller, $action = null) {
         $controller = new $controller;
         $controller->index();
+        switch ($action) {
+            case '';
+
+            break;
+        }
     }
 
 

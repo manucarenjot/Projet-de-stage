@@ -1,6 +1,8 @@
 <?php
 
+use App\Controller\ErrorController\ErrorController;
 use App\Routing\Router\Router;
+
 
 require __DIR__ . '/../require.php';
 
@@ -12,5 +14,6 @@ switch ($page) {
     case 'home':
         Router::route('HomeController');
         break;
-
+    default:
+        ErrorController::error404($page);
 }

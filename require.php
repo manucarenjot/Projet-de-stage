@@ -9,5 +9,7 @@ require __DIR__ . '/Controller/AdminController.php';
 require __DIR__ . '/Controller/MessagerieController.php';
 require __DIR__ . '/Controller/ImageController.php';
 require __DIR__ . '/Controller/HomeController.php';
+require __DIR__ . '/Controller/ErrorController.php';
+
 
 require __DIR__ . '/Routing/Router.php';
