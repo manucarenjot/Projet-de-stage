@@ -15,6 +15,14 @@ class AdminController extends AbstractController
     {
         $this->render('private/update-profil');
     }
+    public function messages()
+    {
+        $this->render('private/message');
+    }
+    public function devis()
+    {
+        $this->render('private/devis');
+    }
 
 
 

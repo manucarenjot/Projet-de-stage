@@ -17,6 +17,12 @@ class Router
             case 'update-profil':
         $control->update();
             break;
+            case 'messages':
+        $control->messages();
+            break;
+            case 'devis':
+        $control->devis();
+            break;
 
         }
     }
