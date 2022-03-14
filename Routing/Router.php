@@ -2,15 +2,17 @@
 namespace App\Routing\Router;
 
 
+
+
 class Router
 {
 
-    public static function route(string $controller, $action = null) {
-        $controller = new $controller;
-        $controller->index();
+    public static function route(string $controller, ?string $action = null) {
+        $control = new $controller();
+        $control->index();
         switch ($action) {
-            case '';
-
+            case 'realisations':
+        $control->realisation();
             break;
         }
     }
