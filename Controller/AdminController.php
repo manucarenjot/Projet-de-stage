@@ -11,6 +11,10 @@ class AdminController extends AbstractController
     {
         $this->render('private/logout');
     }
+    public function update()
+    {
+        $this->render('private/update-profil');
+    }
 
 
 }

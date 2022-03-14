@@ -14,6 +14,9 @@ class Router
             case 'logout':
         $control->logout();
             break;
+            case 'update-profil':
+        $control->update();
+            break;
 
         }
     }
