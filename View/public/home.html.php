@@ -1,3 +1,9 @@
+<?php
+session_start();
+//$_SESSION['admin'] = 'admin';
+echo $_SESSION['admin'];
+
+?>
 <h1>Services</h1>
 
 <div class="services">

@@ -10,4 +10,10 @@ public function render($page) {
     require __DIR__ . '/../View/'. $page . '.html.php';
 }
 
+
+public function notSessionActivate() {
+    if (!isset($_SESSION['admin'])) {
+      header('LOCATION: ?c=connect');
+    }
+}
 }

@@ -44,7 +44,10 @@ switch ($page) {
         Router::route('ContactController');
     break;
     case 'espace-admin':
-        Router::route('AdminController');
+        Router::route('AdminController', $action);
+    break;
+    case 'connect':
+        Router::route('ConnectController');
     break;
     default:
         ErrorController::error404($page);

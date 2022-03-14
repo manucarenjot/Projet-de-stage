@@ -6,4 +6,11 @@ class AdminController extends AbstractController
     {
        $this->render('private/espace-admin');
     }
+
+    public function logout()
+    {
+        $this->render('private/logout');
+    }
+
+
 }
