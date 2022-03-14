@@ -17,11 +17,11 @@ require __DIR__ . '/../require.php';
     <title>Carrosserie Proissy</title>
 </head>
 <body>
-<a href="?c=home">Acceuil</a>
-<a href="?c=realisations">Realisation</a>
-<a href="?c=demande-de-devis">Demande de devis</a>
-<a href="?c=contact">contact</a>
-<a href="?c=espace-admin">Espace admin</a>
+<a href="?c=home">| Acceuil |</a>
+<a href="?c=realisations">Realisation |</a>
+<a href="?c=demande-de-devis">Demande de devis |</a>
+<a href="?c=contact">contact |</a>
+<a href="?c=espace-admin">Espace admin |</a>
 </body>
 </html>
 <?php
