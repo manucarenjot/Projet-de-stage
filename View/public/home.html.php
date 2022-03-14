@@ -9,9 +9,9 @@
 </head>
 <body>
 <a href="?c=home">Acceuil</a>
-<a href="?c=realisations">Realisation</a>
-<a href="?c=demande-de-devis">Demande de devis</a>
-<a href="?c=contact">Contact</a>
-<a href="?c=Administration">Espace admin</a>
+<a href="?c=home&a=realisations">Realisation</a>
+<a href="?c=home&a=demande-de-devis">Demande de devis</a>
+<a href="?c=home&a=contact">contact</a>
+<a href="?c=home&a=espace-admin">Espace admin</a>
 </body>
 </html>

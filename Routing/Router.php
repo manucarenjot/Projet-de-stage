@@ -14,6 +14,15 @@ class Router
             case 'realisations':
         $control->realisation();
             break;
+            case 'demande-de-devis':
+        $control->devis();
+            break;
+            case 'contact':
+        $control->contact();
+            break;
+            case 'espace-admin':
+        $control->admin();
+            break;
         }
     }
 
