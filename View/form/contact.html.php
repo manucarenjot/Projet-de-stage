@@ -31,3 +31,16 @@
     </div>
     <input type="submit" name="send" id="send">
 </form>
+
+<div>
+    <h2>Téléphonez-nous</h2>
+    <p>Nous sommes disponibles aux numéros suivants :</p>
+    <br>
+    <p>0496 14 53 44</p>
+    <p>060 41 29 55</p>
+</div>
+<div>
+    <h2>Par Courrier / nous rejoindre</h2>
+    <br>
+    <p>Rue Périseau 12 6460 Villers-La-Tour</p>
+</div>

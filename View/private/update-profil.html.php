@@ -1,4 +1,4 @@
-<br><a href="?c=espace-admin">ᐊ</a><h2>Modification du profil</h2>
+<br><a href="?c=espace-admin">ᐊ=</a><h2>Modification du profil</h2>
 
 <form method="post" action="">
     <label for="username">Changer de nom d'utilisateur :</label>
@@ -19,3 +19,5 @@
     <br>
     <input type="submit" name="send" id="send">
 </form>
+
+
