@@ -26,11 +26,13 @@ foreach ($datas = $select->fetchAll() as $data) { ?>
 <div class="services">
     <h3 class="services-titre"><?= $data['title'] ?></h3>
     <p class="services-paragraphe"><?= $data['description'] ?></p>
+    <a href="?c=home&a=update-service">Modifier</a>
     <form method="post" action="?c=home">
         <input type="submit" name="delete" id="delete" value="&#45">
     </form>
 </div>
 <?php
+    $_SESSION['service-id'] = $data;
 }
 
 }
