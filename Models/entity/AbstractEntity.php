@@ -1,4 +1,6 @@
 <?php
+namespace App\entity;
+
 class AbstractEntity
 
 {

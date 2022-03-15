@@ -1,4 +1,6 @@
 <?php
+namespace App\entity;
+use App\entity\AbstractEntity;
 
 class Admin extends AbstractEntity
 {
