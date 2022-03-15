@@ -23,7 +23,6 @@ class AdminManager extends Admin
         else {
             echo '<p class="alert error-alert"><strong>Adresse mail ou mot de passe invalide !</strong></p>';
         }
-
     }
 
 
