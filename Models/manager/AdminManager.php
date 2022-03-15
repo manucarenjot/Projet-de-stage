@@ -16,6 +16,7 @@ class AdminManager extends Admin
             if (password_verify($password, $admin['password'])) {
                 session_start();
                 $_SESSION['admin'] = $admin;
+            }
         }
         else {
             echo '<p class="alert error-alert"><strong>Adresse mail invalide !</strong></p>';

@@ -9,7 +9,7 @@ class ConnectController extends AbstractController
         if ($this->getPost()) {
             $mail = $_POST['mail'];
             $password = $_POST['password'];
-            AdminManager::connectUserWithMail($mail);
+            AdminManager::connectUserWithMail($mail, $password);
         }
     }
 
