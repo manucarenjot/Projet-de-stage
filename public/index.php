@@ -1,6 +1,18 @@
 <?php
+
 use App\Routing\Router\Router;
 use App\Controller\ErrorController\ErrorController;
+
+session_start();
+
+if(isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
+    $alerts = $_SESSION['alert'];
+    unset($_SESSION['alert']);
+
+    foreach($alerts as $alert) { ?>
+        <div class="alert alert-error"><strong><?= $alert ?></strong></div> <?php
+    }
+}
 
 
 

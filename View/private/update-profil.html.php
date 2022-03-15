@@ -1,12 +1,5 @@
 <?php
-if(isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
-        $alerts = $_SESSION['alert'];
-        unset($_SESSION['alert']);
 
-        foreach($alerts as $alert) { ?>
-            <div class="alert alert-error"><strong><?= $alert ?></strong></div> <?php
-        }
-    }
 ?>
 
 <br><a href="?c=espace-admin">ᐊ=</a><h2>Modification du profil</h2>

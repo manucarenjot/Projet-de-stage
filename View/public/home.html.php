@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <h1>Services</h1>
 
 <div class="services">
