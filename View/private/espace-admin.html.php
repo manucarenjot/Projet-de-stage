@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//AbstractController::notSessionActivate();
+AbstractController::notSessionActivate();
 ?>
 
 <h1>Espace d'administration</h1>

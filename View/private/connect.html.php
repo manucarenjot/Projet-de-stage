@@ -1,6 +1,6 @@
 <br><br>
 
-<form method="post" action="">
+<form method="post" action="/index.php?c=connect&a=login">
     <label for="mail">Adresse e-mail :</label>
     <input type="email" name="mail" id="mail">
     <br>

@@ -47,7 +47,7 @@ switch ($page) {
         Router::route('AdminController', $action);
     break;
     case 'connect':
-        Router::route('ConnectController');
+        Router::route('ConnectController', $action);
     break;
     default:
         ErrorController::error404($page);

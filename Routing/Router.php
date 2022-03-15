@@ -4,6 +4,8 @@ namespace App\Routing\Router;
 
 
 
+use ConnectController;
+
 class Router
 {
 
@@ -14,6 +16,9 @@ class Router
             case 'logout':
         $control->logout();
             break;
+            case 'login':
+        $control->login();
+                break;
             case 'update-profil':
         $control->update();
             break;
