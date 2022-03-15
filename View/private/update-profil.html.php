@@ -1,6 +1,8 @@
+
+
 <br><a href="?c=espace-admin">ᐊ=</a><h2>Modification du profil</h2>
 
-<form method="post" action="">
+<form method="post" action="?c=espace-admin&a=update-profil">
     <label for="username">Changer de nom d'utilisateur :</label>
     <br>
     <input type="text" name="username" id="username">
