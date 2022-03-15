@@ -35,9 +35,7 @@ class AdminManager extends Admin
         }
     }
 
-
     public static function changeAdminData(string $username, string $mail, string $password, $id) {
-        //todo à terminer
         $result = Connect::getPDO()->prepare("UPDATE ftk09_admin 
                                                     SET username = :username, mail = :mail, password= :password 
                                                     WHERE '{$id}'");
