@@ -12,23 +12,16 @@ class AdminManager extends Admin
         $result->execute();
         $admin = $result->fetch();
         if ($admin) {
-            //todo à vérifier
-            $_SESSION['admin'] = $admin;
-
-            echo "<pre>";
-            var_dump($_SESSION['admin']);
-            echo "</pre>";
-
-            header('LOCATION: ?c=espace-admin');
-
-
             if (password_verify($password, $admin['password'])) {
-
-
+                $_SESSION['admin'] = $admin;
+                header('LOCATION: ?c=espace-admin');
+            }
+            else {
+                echo '<p class="alert error-alert"><strong>Adresse mail ou mot de passe invalide !</strong></p>';
             }
         }
         else {
-            echo '<p class="alert error-alert"><strong>Adresse mail invalide !</strong></p>';
+            echo '<p class="alert error-alert"><strong>Adresse mail ou mot de passe invalide !</strong></p>';
         }
 
     }
