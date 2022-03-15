@@ -36,7 +36,7 @@ class AdminManager extends Admin
 
     public static function changeAdminData() {
         //todo à terminer
-        $result = Connect::getPDO()->prepare("UPDATE ftk09_admin SET username, mail, password WHERE '{$_SESSION['id']}' ");
+        $result = Connect::getPDO()->prepare("UPDATE ftk09_admin SET username = :username, mail = :mail, password= :password WHERE '{$_SESSION['id']}'");
     }
 
 }
