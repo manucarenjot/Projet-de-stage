@@ -31,7 +31,7 @@
     </div>
 
 
-    <form method="post" action="">
+    <form method="post" action="?c=home">
         <br>
         <div class="add-service">
             <label for="title">Titre :</label>
