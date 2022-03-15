@@ -15,14 +15,28 @@ class AdminController extends AbstractController
     {
         $this->render('private/update-profil');
         if ($this->getPost()) {
-            $username = trim(strip_tags($_POST['username']));
-            $mail = trim(strip_tags(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)));
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $id = $_SESSION['admin']['id'];
 
-            echo $username . ' ' . $mail . ' ' . $password . ' ' . $id;
-            AdminManager::changeAdminData($username, $mail, $password, $id);
-            echo 'post ok';
+            $alert = [];
+
+
+            if ($_POST['password'] !== $_POST['password-repeat']) {
+                $alert[] = 'Les mots de passes ne sont pas identiques';
+            }
+
+            if(count($alert) > 0) {
+                $_SESSION['alert'] = $alert;
+                header('LOCATION: ?c=espace-admin&a=update-profil');
+            }
+            else {
+                $username = trim(strip_tags($_POST['username']));
+                $mail = trim(strip_tags(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)));
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $id = $_SESSION['admin']['id'];
+
+                AdminManager::changeAdminData($username, $mail, $password, $id);
+            }
+
+
         }
     }
     public function messages()
