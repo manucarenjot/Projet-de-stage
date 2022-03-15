@@ -7,6 +7,7 @@ class AdminManager extends Admin
 {
     public static function connectUserWithMail(string $mail, string $password)
     {
+        $alert = [];
         $result = Connect::getPDO()->prepare("SELECT * FROM ftk09_admin WHERE mail = '{$mail}'");
 
         $result->execute();
@@ -17,11 +18,20 @@ class AdminManager extends Admin
                 header('LOCATION: ?c=espace-admin');
             }
             else {
-                echo '<p class="alert error-alert"><strong>Adresse mail ou mot de passe invalide !</strong></p>';
+                $alert[] = 'Adresse e-mail ou mot de passe invalide !';
+                if(count($alert) > 0) {
+                    $_SESSION['alert'] = $alert;
+                    header('LOCATION: ?c=connect&a=login');
+                }
+
             }
         }
         else {
-            echo '<p class="alert error-alert"><strong>Adresse mail ou mot de passe invalide !</strong></p>';
+            $alert[] = 'Adresse e-mail ou mot de passe invalide !';
+            if(count($alert) > 0) {
+                $_SESSION['alert'] = $alert;
+                header('LOCATION: ?c=connect&a=login');
+            }
         }
     }
 
