@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <br><br>
 
 <form method="post" action="/index.php?c=connect&a=login">

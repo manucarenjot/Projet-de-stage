@@ -20,6 +20,7 @@ class Connect extends Config
                 $dsn = sprintf(self::$dsn, Config::DB_SERV, Config::DB_NAME, Config::DB_PORT,Config::CHARSET);
                 self::$pdoObject = new PDO($dsn, Config::DB_USERNAME, Config::DB_PASSWORD);
                 self::$pdoObject->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                self::$pdoObject->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             }
             catch (Exception $e) {
                 echo "Une erreur est intervenue ";

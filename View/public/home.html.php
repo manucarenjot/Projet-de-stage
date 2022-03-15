@@ -1,7 +1,9 @@
 <?php
 session_start();
-//$_SESSION['admin'] = 'admin';
-echo $_SESSION['admin'];
+echo "<pre>";
+var_dump($_SESSION['admin']);
+echo "</pre>";
+
 
 ?>
 <h1>Services</h1>

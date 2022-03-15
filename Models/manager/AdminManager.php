@@ -12,16 +12,31 @@ class AdminManager extends Admin
         $result->execute();
         $admin = $result->fetch();
         if ($admin) {
-            echo 'l\'adresse est valide ';
+            //todo à vérifier
+            $_SESSION['admin'] = $admin;
+
+            echo "<pre>";
+            var_dump($_SESSION['admin']);
+            echo "</pre>";
+
+            header('LOCATION: ?c=espace-admin');
+
+
             if (password_verify($password, $admin['password'])) {
-                session_start();
-                $_SESSION['admin'] = $admin;
+
+
             }
         }
         else {
             echo '<p class="alert error-alert"><strong>Adresse mail invalide !</strong></p>';
         }
 
+    }
+
+
+    public static function changeAdminData() {
+        //todo à terminer
+        $result = Connect::getPDO()->prepare("UPDATE ftk09_admin SET username, mail, password WHERE '{$_SESSION['id']}' ");
     }
 
 }
