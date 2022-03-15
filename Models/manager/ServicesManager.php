@@ -23,9 +23,9 @@ $select = Connect::getPDO()->prepare("SELECT * FROM ftk09_services");
 $select->execute();
 if ($select->execute()) {
 foreach ($datas = $select->fetchAll() as $data) { ?>
-<div>
-    <h3><?= $data['title'] ?></h3>
-    <p><?= $data['description'] ?></p>
+<div class="services">
+    <h3 class="services-titre"><?= $data['title'] ?></h3>
+    <p class="services-paragraphe"><?= $data['description'] ?></p>
 </div>
 <?php
 }
