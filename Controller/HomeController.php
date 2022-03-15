@@ -18,6 +18,11 @@ class HomeController extends AbstractController
 
             ServicesManager::addService($title, $description);
         }
+
+        if ($this->getDelete()) {
+
+            ServicesManager::deleteService($_GET['id']);
+        }
     }
 
 }

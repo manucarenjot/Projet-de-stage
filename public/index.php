@@ -46,6 +46,9 @@ switch ($page) {
     case 'home':
         Router::route('HomeController');
     break;
+    case 'update-service':
+        Router::route('UpdateServiceController');
+    break;
     case 'realisations':
         Router::route('RealisationController');
     break;

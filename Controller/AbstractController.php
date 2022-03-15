@@ -22,4 +22,7 @@ abstract class AbstractController
     public function getPost(): bool {
         return isset($_POST['send']);
     }
+    public function getDelete(): bool {
+        return isset($_POST['delete']);
+    }
 }
