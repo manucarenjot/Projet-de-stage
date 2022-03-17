@@ -1,6 +1,6 @@
 <h1>Contact</h1>
 
-<form method="post" action="">
+<form method="post" action="?c=contact">
     <div>
         <label for="name">Nom :</label>
         <input type="text" name="name" id="name">

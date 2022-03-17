@@ -6,9 +6,9 @@ class MessagerieManager
 {
 
 
-    public static function getMessage($name, $firstname, $mail, $phone, $message) {
+    public static function sendMessage($name, $firstname, $mail, $phone, $message) {
         $insert = Connect::getPDO()->prepare("INSERT INTO ftk09_messagerie (name, firstname, mail, phone, messages, date)
-                                                    VALUES '{$name}', '{$firstname}', '{$mail}', '{$phone}', '{$message}', NOW()");
+                                                    VALUES ('{$name}', '{$firstname}', '{$mail}', '{$phone}', '{$message}', NOW())");
 
         if ($insert->execute()) {
 
