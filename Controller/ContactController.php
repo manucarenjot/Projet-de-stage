@@ -11,15 +11,19 @@ class ContactController extends AbstractController
 
             if (empty($_POST['name'])) {
                 $alert[] = 'il manque un champs';
+
             }
             if (empty($_POST['firstname'])) {
                 $alert[] = 'il manque un champs';
+
             }
             if (empty($_POST['mail'])) {
                 $alert[] = 'il manque un champs';
+
             }
             if (empty($_POST['phone-number'])) {
                 $alert[] = 'il manque un champs';
+
             }
             if (empty($_POST['message'])) {
                 $alert[] = 'il manque un champs';
@@ -34,7 +38,7 @@ class ContactController extends AbstractController
                     $alert[] = 'Le contenu du message doit contenir au minimum 2 caractères ';
                 }
                 if (!preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $_POST['phone-number'])) {
-                    $alert[] = 'Le numéro de téléphone ne doit contenir que des chiffre';
+                    $alert[] = 'Le numéro de téléphone ne doit contenir que des chiffre et doit contenir au minimum 10 caractères';
                 }
             }
 
