@@ -43,7 +43,13 @@ class AdminController extends AbstractController
     {
         $this->render('private/message');
         MessagerieManager::getMessage();
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            MessagerieManager::getMessageById($id);
+        }
+
     }
+
     public function devis()
     {
         $this->render('private/devis');
