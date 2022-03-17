@@ -10,9 +10,9 @@ class MessagerieManager
         $insert = Connect::getPDO()->prepare("INSERT INTO ftk09_messagerie (name, firstname, mail, phone, messages, date)
                                                     VALUES ('{$name}', '{$firstname}', '{$mail}', '{$phone}', '{$message}', NOW())");
 
-        if ($insert->execute()) {
+         $insert->execute();
 
-            header('LOCATION: ?c=contact');
-        }
+
+
     }
 }
