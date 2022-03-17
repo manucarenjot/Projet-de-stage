@@ -34,8 +34,9 @@ class ContactController extends AbstractController
                 if (strlen($_POST['firstname']) <= 2 || strlen($_POST['firstname']) >= 255) {
                     $alert[] = 'le prenom doit contenir entre 2 et 255 caractères !';
                 }
-
-
+                if (strlen($_POST['message']) < 2) {
+                    $alert[] = 'Le contenu du message doit contenir au minimum 2 caractères ';
+                }
                 if (!preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $_POST['phone-number'])) {
                     $alert[] = 'Le numéro de téléphone ne doit contenir que des chiffre';
                 }
