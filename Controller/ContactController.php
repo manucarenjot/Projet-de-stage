@@ -32,7 +32,7 @@ class ContactController extends AbstractController
                     $alert[] = 'le nom doit contenir entre 2 et 255 caractères !';
                 }
                 if (strlen($_POST['firstname']) <= 2 || strlen($_POST['firstname']) >= 255) {
-                    $alert[] = 'le prenom doit contenir entre 2 et 255 caractères !';
+                    $alert[] = 'le prénom doit contenir entre 2 et 255 caractères !';
                 }
                 if (strlen($_POST['message']) < 2) {
                     $alert[] = 'Le contenu du message doit contenir au minimum 2 caractères ';
