@@ -28,8 +28,10 @@ class MessagerieManager
                 ?>
                 <p>_</p><br>
                 <div class="coordonner">
-                    <a href="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">- <?= $data['name'] ?>  <?= $data['firstname'] ?>
-                        <br></a><br><br>
+                    <a href="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">- <?= $data['name'] ?>  <?= $data['firstname'] ?></a>
+                    <form method="post" action="?c=espace-admin&a=messages&id=<?=$data['id']?>">
+                        <input type="submit" name="delete" id="delete" value="&#45">
+                    </form>
                 </div>
                 <?php
                 }
@@ -54,10 +56,18 @@ class MessagerieManager
                     <p class="date"> Envoyé le : <?= date('d-m-y  à H:i', strtotime($data['date'])) ?></p>
                     <p class="mail"> E-mail : <?= $data['mail'] ?></p>
                     <p class="phone">Numéro de téléphone : <?= $data['phone'] ?></p>
-                    <p class="content">Message : <br><br><?= $data['messages'] ?></p>
+                    <p class="content">Message : <?= $data['messages'] ?></p>
                 </div>
                 <?php
             }
+        }
+    }
+
+    public static function deleteMessage($id)
+    {
+        $delete = Connect::getPDO()->prepare("DELETE FROM ftk09_messagerie WHERE id = '{$id}'");
+        if ($delete->execute()) {
+            header('LOCATION: ?c=espace-admin&a=messages');
         }
     }
 }

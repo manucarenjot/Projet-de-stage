@@ -25,9 +25,6 @@ class Router
             case 'messages':
         $control->messages();
             break;
-            case 'id':
-        $control->messageById();
-            break;
             case 'devis':
         $control->devis();
             break;

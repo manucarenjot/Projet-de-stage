@@ -46,8 +46,18 @@ class AdminController extends AbstractController
             $id = $_GET['id'];
             MessagerieManager::getMessageById($id);
         }
-        MessagerieManager::getMessage();
 
+        if ($this->getDelete()) {
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                MessagerieManager::deleteMessage($id);
+            }
+        }
+        MessagerieManager::getMessage();
+    }
+
+    public function deleteMessage() {
+        $this->render('private/message');
 
     }
 
