@@ -11,19 +11,15 @@ class ContactController extends AbstractController
 
             if (empty($_POST['name'])) {
                 $alert[] = 'il manque un champs';
-
             }
             if (empty($_POST['firstname'])) {
                 $alert[] = 'il manque un champs';
-
             }
             if (empty($_POST['mail'])) {
                 $alert[] = 'il manque un champs';
-
             }
             if (empty($_POST['phone-number'])) {
                 $alert[] = 'il manque un champs';
-
             }
             if (empty($_POST['message'])) {
                 $alert[] = 'il manque un champs';

@@ -42,6 +42,7 @@ class AdminController extends AbstractController
     public function messages()
     {
         $this->render('private/message');
+        MessagerieManager::getMessage();
     }
     public function devis()
     {
