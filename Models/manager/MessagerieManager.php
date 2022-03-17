@@ -18,7 +18,7 @@ class MessagerieManager
 
     public static function getMessage()
     {
-        $select = Connect::getPDO()->prepare("SELECT id, name, firstname, mail, phone, messages, date  FROM ftk09_messagerie ");
+        $select = Connect::getPDO()->prepare("SELECT id, name, firstname,date  FROM ftk09_messagerie ORDER BY date DESC ");
 
         if ($select->execute()) {
             foreach ($datas = $select->fetchAll() as $data) {
