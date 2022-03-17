@@ -42,11 +42,12 @@ class AdminController extends AbstractController
     public function messages()
     {
         $this->render('private/message');
-        MessagerieManager::getMessage();
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             MessagerieManager::getMessageById($id);
         }
+        MessagerieManager::getMessage();
+
 
     }
 
