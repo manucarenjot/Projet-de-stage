@@ -50,8 +50,7 @@ class MessagerieManager
 
                 ?>
                 <div class="message">
-                    <p class="name">Nom : <?= $data['name'] ?></p>
-                    <p class="firstname"> Prenom : <?= $data['firstname'] ?></p>
+                    <p class="name">De : <?= $data['name'] ?> <?= $data['firstname'] ?></p>
                     <p class="date"> Envoyé le : <?= date('d-m-y  à H:i', strtotime($data['date'])) ?></p>
                     <p class="mail"> E-mail : <?= $data['mail'] ?></p>
                     <p class="phone">Numéro de téléphone : <?= $data['phone'] ?></p>
