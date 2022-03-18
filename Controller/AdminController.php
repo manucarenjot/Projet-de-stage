@@ -40,7 +40,7 @@ class AdminController extends AbstractController
         }
     }
     public function messages()
-    {
+    {MessagerieManager::getMessage();
         $this->render('private/message');
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
@@ -53,7 +53,7 @@ class AdminController extends AbstractController
                 MessagerieManager::deleteMessage($id);
             }
         }
-        MessagerieManager::getMessage();
+
     }
 
     public function deleteMessage() {

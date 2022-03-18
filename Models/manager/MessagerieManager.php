@@ -22,24 +22,26 @@ class MessagerieManager
 
         if ($select->execute()) {
             ?>
+            <div class="messagerie">
             <div class="expediteur">
                 <?php
-            foreach ($datas = $select->fetchAll() as $data) {
-                ?>
-                <p>_</p><br>
-                <div class="coordonner">
-                    <a href="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">- <?= $data['name'] ?>  <?= $data['firstname'] ?></a>
-                    <form method="post" action="?c=espace-admin&a=messages&id=<?=$data['id']?>">
-                        <input type="submit" name="delete" id="delete" value="&#45">
-                    </form>
-                </div>
-                <?php
+                foreach ($datas = $select->fetchAll() as $data) {
+                    ?>
+                    <p>_</p><br>
+                    <div class="coordonner">
+                        <a href="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">- <?= $data['name'] ?>  <?= $data['firstname'] ?></a>
+                        <form method="post" action="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">
+                            <input type="submit" name="delete" id="delete" value="&#45">
+                        </form>
+                    </div>
+                    <?php
                 }
                 ?>
             </div>
-                <?php
-            }
+
+            <?php
         }
+    }
 
 
     public static function getMessageById($id)
@@ -51,12 +53,16 @@ class MessagerieManager
             foreach ($datas = $select->fetchAll() as $data) {
 
                 ?>
+
                 <div class="message">
                     <p class="name">De : <?= $data['name'] ?> <?= $data['firstname'] ?></p>
                     <p class="date"> Envoyé le : <?= date('d-m-y  à H:i', strtotime($data['date'])) ?></p>
-                    <p class="mail"> E-mail : <a href="mailto:<?=$data['mail']?>" class="coordonnerData"><?= $data['mail'] ?></a></p>
-                    <p class="phone">Numéro de téléphone : <a href="tel:<?=$data['phone']?>" class="coordonnerData"><?= $data['phone'] ?></a></p>
+                    <p class="mail"> E-mail : <a href="mailto:<?= $data['mail'] ?>"
+                                                 class="coordonnerData"><?= $data['mail'] ?></a></p>
+                    <p class="phone">Numéro de téléphone : <a href="tel:<?= $data['phone'] ?>"
+                                                              class="coordonnerData"><?= $data['phone'] ?></a></p>
                     <p class="content">Message : <?= $data['messages'] ?></p>
+                </div>
                 </div>
                 <?php
             }
