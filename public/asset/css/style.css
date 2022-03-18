@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/debut_dark.png);
+    background-color: #7f7f7f;
+}
+
+.menu {
+    background-color: #131313;
+
+}
+.menu a {
+    color: #7f7f7f;
+    text-decoration-line: none;
+
+}
+.menu a:hover {
+    color: #6aa602;
+}
+
+.fa-plus {
+    font-size: 100px;
+    color: #faf2f2;
+    background-color: #525454;
+    border-radius: 15px;
+}
+
+.gallerieImage {
+
+    margin: 4px;
+}
+
+.gallerieImage:hover {
+    cursor: pointer;
+
+    border: solid 8px #424141;
+}
