@@ -38,7 +38,7 @@ class ContactController extends AbstractController
                     $alert[] = 'Le contenu du message doit contenir au minimum 2 caractères ';
                 }
                 if (!preg_match("/\\+[0-9][0-9][0-9]( [0-9][0-9])+|([0-9]+)$/", trim($_POST['phone-number']))) {
-                    $alert[] = 'Le numéro de téléphone ne doit contenir que des chiffre et doit contenir au minimum 10 caractères';
+                    $alert[] = 'Le numéro de téléphone ne doit contenir que des chiffres';
                 }
             }
 
