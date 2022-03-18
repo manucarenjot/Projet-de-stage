@@ -54,8 +54,8 @@ class MessagerieManager
                 <div class="message">
                     <p class="name">De : <?= $data['name'] ?> <?= $data['firstname'] ?></p>
                     <p class="date"> Envoyé le : <?= date('d-m-y  à H:i', strtotime($data['date'])) ?></p>
-                    <p class="mail"> E-mail : <?= $data['mail'] ?></p>
-                    <p class="phone">Numéro de téléphone : <?= $data['phone'] ?></p>
+                    <p class="mail"> E-mail : <a href="mailto:<?=$data['mail']?>" class="coordonnerData"><?= $data['mail'] ?></a></p>
+                    <p class="phone">Numéro de téléphone : <a href="tel:<?=$data['phone']?>" class="coordonnerData"><?= $data['phone'] ?></a></p>
                     <p class="content">Message : <?= $data['messages'] ?></p>
                 </div>
                 <?php

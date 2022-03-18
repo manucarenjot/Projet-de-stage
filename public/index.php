@@ -35,6 +35,7 @@ require __DIR__ . '/../require.php';
     <a href="?c=demande-de-devis">Demande de devis |</a>
     <a href="?c=contact">Contact |</a>
     <a href="?c=espace-admin">Espace admin |</a>
+
 </div>
 
 <?php

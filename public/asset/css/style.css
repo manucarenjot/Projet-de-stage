@@ -14,7 +14,7 @@ body {
 
 }
 .menu a {
-    color: #7f7f7f;
+    color: #c5c3c3;
     text-decoration-line: none;
 
 }
@@ -39,3 +39,35 @@ body {
 
     border: solid 8px #424141;
 }
+
+.message {
+    background-color: #262626;
+    border: 5px solid #6aa602;
+    color: #ded3d3;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.coordonner {
+    background-color: #262626;
+    border: 2px solid #c9c9c9;
+    width: 20%;
+    margin: 10px;
+}
+
+.coordonner a {
+    text-decoration-line: none;
+    color: #ded3d3;
+    font-size: 1.2em;
+}
+
+.coordonner a:hover {
+    color: #6aa602;
+}
+
+.coordonnerData {
+    color: #7f7f7f;
+    text-decoration-line: none;
+}
+
