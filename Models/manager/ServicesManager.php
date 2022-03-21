@@ -30,7 +30,6 @@ class ServicesManager
                     <form method="post" action="?c=home&id=<?=$data['id']?>">
                         <input type="submit" name="delete" id="delete" value="&#45">
                     </form>
-
                 </div>
                 <?php
                 $_SESSION['service-id'] = $data;
