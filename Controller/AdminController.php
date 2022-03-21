@@ -20,7 +20,7 @@ class AdminController extends AbstractController
 
 
             if ($_POST['password'] !== $_POST['password-repeat']) {
-                $alert[] = 'Les mots de passes ne sont pas identiques';
+                $alert[] = '<div class="alert-error">Les mots de passes ne sont pas identiques</div>';
             }
 
             if(count($alert) > 0) {

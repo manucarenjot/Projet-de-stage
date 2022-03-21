@@ -14,10 +14,10 @@ class HomeController extends AbstractController
             $alert = [];
             //TODO verifier les champs !!!
             if (empty($_POST['title'])) {
-                $alert[] = 'Il manque le champs "Titre"';
+                $alert[] = '<div class="alert-error">Il manque le champs "Titre"</div>';
             }
             if (empty($_POST['description'])) {
-                $alert[] = 'Il manque le champs "Description"';
+                $alert[] = '<div class="alert-error">Il manque le champs "Description"</div>';
             }
 
             if(count($alert) > 0) {

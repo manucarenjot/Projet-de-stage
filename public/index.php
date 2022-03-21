@@ -5,14 +5,7 @@ use App\Controller\ErrorController\ErrorController;
 
 session_start();
 
-if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
-    $alerts = $_SESSION['alert'];
-    unset($_SESSION['alert']);
 
-    foreach ($alerts as $alert) { ?>
-        <div class="alert alert-error"><strong><?= $alert ?></strong></div> <?php
-    }
-}
 
 
 require __DIR__ . '/../require.php';
@@ -39,6 +32,16 @@ require __DIR__ . '/../require.php';
 </div>
 
 <?php
+
+
+if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
+    $alerts = $_SESSION['alert'];
+    unset($_SESSION['alert']);
+
+    foreach ($alerts as $alert) {
+        echo $alert;
+    }
+}
 
 $page = isset($_GET['c']) ? Router::secureUrl($_GET['c']) : 'home';
 $action = isset($_GET['a']) ? Router::secureUrl($_GET['a']) : 'index';
@@ -69,6 +72,8 @@ switch ($page) {
     default:
         ErrorController::error404($page);
 }
+
+
 ?>
 <script src="https://kit.fontawesome.com/d8438e7f2f.js" crossorigin="anonymous"></script>
 </body>

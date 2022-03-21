@@ -38,10 +38,17 @@ class MessagerieManager
                     </div>
                     <?php
                 }
+
                 ?>
             </div>
 
             <?php
+        }
+        else {
+            $alert[] = '<div class="alert-error">Aucun messages trouvé !</div>';
+            if(count($alert) > 0) {
+                $_SESSION['alert'] = $alert;
+            }
         }
     }
 
@@ -68,6 +75,12 @@ class MessagerieManager
                 </div>
                 </div>
                 <?php
+            }
+        }
+        else {
+            $alert[] = '<div class="alert-error">Aucun messages trouvé !</div>';
+            if(count($alert) > 0) {
+                $_SESSION['alert'] = $alert;
             }
         }
     }

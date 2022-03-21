@@ -98,3 +98,12 @@ body {
     background-color: #000000;
 }
 
+.alert-error {
+    width: 40%;
+    background-color: #f84f4f;
+    color: #c5c3c3;
+    text-align: center;
+    border-radius: 15px;
+    font-size: large;
+    font-weight: bold;
+}

@@ -10,35 +10,35 @@ class ContactController extends AbstractController
             $alert = [];
 
             if (empty($_POST['name'])) {
-                $alert[] = 'il manque un champs';
+                $alert[] = '<div class="alert-error">il manque un champs</div>';
 
             }
             if (empty($_POST['firstname'])) {
-                $alert[] = 'il manque un champs';
+                $alert[] = '<div class="alert-error">il manque un champs</div>';
 
             }
             if (empty($_POST['mail'])) {
-                $alert[] = 'il manque un champs';
+                $alert[] = '<div class="alert-error">il manque un champs</div>';
 
             }
             if (empty($_POST['phone-number'])) {
-                $alert[] = 'il manque un champs';
+                $alert[] = '<div class="alert-error">il manque un champs</div>';
 
             }
             if (empty($_POST['message'])) {
-                $alert[] = 'il manque un champs';
+                $alert[] = '<div class="alert-error">il manque un champs</div>';
             } else {
                 if (strlen($_POST['name']) <= 2 || strlen($_POST['name']) >= 255) {
-                    $alert[] = 'le nom doit contenir entre 2 et 255 caractères !';
+                    $alert[] = '<div class="alert-error">le nom doit contenir entre 2 et 255 caractères !</div>';
                 }
                 if (strlen($_POST['firstname']) <= 2 || strlen($_POST['firstname']) >= 255) {
-                    $alert[] = 'le prénom doit contenir entre 2 et 255 caractères !';
+                    $alert[] = '<div class="alert-error">le prénom doit contenir entre 2 et 255 caractères !</div>';
                 }
                 if (strlen($_POST['message']) < 2) {
-                    $alert[] = 'Le contenu du message doit contenir au minimum 2 caractères ';
+                    $alert[] = '<div class="alert-error">Le contenu du message doit contenir au minimum 2 caractères </div>';
                 }
                 if (!preg_match("/\\+[0-9][0-9][0-9]( [0-9][0-9])+|([0-9]+)$/", trim($_POST['phone-number']))) {
-                    $alert[] = 'Le numéro de téléphone ne doit contenir que des chiffres';
+                    $alert[] = '<div class="alert-error">Le numéro de téléphone ne doit contenir que des chiffres</div>';
                 }
             }
 
@@ -55,9 +55,9 @@ class ContactController extends AbstractController
                     $message = trim(htmlentities($_POST['message']));
 
                     MessagerieManager::sendMessage($name, $firstname, $mail, $phone, $message);
-                    $alert[] = 'Message envoyé';
+                    $alert[] = '<div class="alert-succes">Message envoyé</div>';
                 } else {
-                    $alert[] = 'l\'adresse mail n\'est pas valide';
+                    $alert[] = '<div class="alert-error">l\'adresse mail n\'est pas valide</div>';
                 }
 
 

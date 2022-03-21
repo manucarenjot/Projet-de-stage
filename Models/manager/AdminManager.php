@@ -18,7 +18,7 @@ class AdminManager extends Admin
                 header('LOCATION: ?c=espace-admin');
             }
             else {
-                $alert[] = 'Adresse e-mail ou mot de passe invalide !';
+                $alert[] = '<div class="alert-error">Adresse e-mail ou mot de passe invalide !</div>';
                 if(count($alert) > 0) {
                     $_SESSION['alert'] = $alert;
                     header('LOCATION: ?c=connect&a=login');
@@ -27,7 +27,7 @@ class AdminManager extends Admin
             }
         }
         else {
-            $alert[] = 'Adresse e-mail ou mot de passe invalide !';
+            $alert[] = '<div class="alert-error">Adresse e-mail ou mot de passe invalide !</div>';
             if(count($alert) > 0) {
                 $_SESSION['alert'] = $alert;
                 header('LOCATION: ?c=connect&a=login');
