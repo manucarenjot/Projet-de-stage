@@ -52,7 +52,10 @@ body {
 
 .messagerie {
     width: 90%;
-    border: 3px solid beige;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .message {
@@ -63,19 +66,20 @@ body {
     margin: 10px;
     font-size: 1.2em;
     width: 70%;
+    word-break: break-word;
+    white-space: normal;
+
 }
 
-.coordonner {
-    background-color: #000000;
-    border: 2px solid #c9c9c9;
-    width: 50%;
-    margin: 10px;
-}
 
 .coordonner a {
     text-decoration-line: none;
     color: #ded3d3;
     font-size: 1.2em;
+    background-color: #000000;
+    border: 2px solid #c9c9c9;
+    padding: 15px;
+    margin: 10px;
 }
 
 .coordonner a:hover {
@@ -85,5 +89,12 @@ body {
 .coordonnerData {
     color: #7f7f7f;
     text-decoration-line: none;
+}
+
+.expediteur {
+    width: 30%;
+    float: start;
+    border: 5px solid #6aa602;
+    background-color: #000000;
 }
 

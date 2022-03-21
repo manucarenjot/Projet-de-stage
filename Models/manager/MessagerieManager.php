@@ -22,7 +22,9 @@ class MessagerieManager
 
         if ($select->execute()) {
             ?>
+            <h1>Messages</h1>
             <div class="messagerie">
+
             <div class="expediteur">
                 <?php
                 foreach ($datas = $select->fetchAll() as $data) {
@@ -61,7 +63,8 @@ class MessagerieManager
                                                  class="coordonnerData"><?= $data['mail'] ?></a></p>
                     <p class="phone">Numéro de téléphone : <a href="tel:<?= $data['phone'] ?>"
                                                               class="coordonnerData"><?= $data['phone'] ?></a></p>
-                    <p class="content">Message : <?= $data['messages'] ?></p>
+                    <br>
+                    <p class="content" >Message :  <?=$data['messages'] ?></p>
                 </div>
                 </div>
                 <?php
