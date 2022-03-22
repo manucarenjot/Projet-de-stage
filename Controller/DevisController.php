@@ -3,7 +3,6 @@
 
 class DevisController extends AbstractController
 {
-
     public function index()
     {
         $this->render('form/devis');
@@ -14,7 +13,8 @@ class DevisController extends AbstractController
             $carPicture = $_POST['photoVoiture'];
             $captcha = $_POST['captcha'];
 
-            echo '<div>'.$phone . $mail . $greyCard. $carPicture . $captcha .'</div>';
+
+            echo '<div>'.$phone . $mail . '<img src="'. $greyCard. '"'. $carPicture . $captcha .'</div>';
         }
     }
 }

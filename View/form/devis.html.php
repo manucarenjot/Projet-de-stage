@@ -1,5 +1,44 @@
 <?php
-$_SESSION['captcha'] = mt_rand(1000, 9999);
+
+function getRandomName(string $regularName) {
+    $infos = pathinfo($regularName);
+    try {
+        $bytes = random_bytes(15);
+    }
+    catch (Exception $e) {
+        $bytes = openssl_random_pseudo_bytes(15);
+    }
+    return bin2hex($bytes) . '.' . $infos['extension'];
+}
+
+?>
+<?php
+
+if (isset($_FILES["carteGrise"])) {
+    $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];
+    if (in_array($_FILES['carteGrise']['type'], $allowedMimeTypes)) {
+        if ($_FILES['carteGrise']['error'] === 0) {
+            $tmp_name = $_FILES['carteGrise']["tmp_name"];
+
+            $name = getRandomName($_FILES['carteGrise']["name"]);
+            if (!is_dir('uploads')) {
+                mkdir('uploads', '0755');
+            }
+            move_uploaded_file($tmp_name, 'uploads/' . $name);
+
+            echo '<p class="success">upload réussi !</p><br>';
+            echo $name . '<br>';
+            foreach ($_FILES['fichierUtilisateur'] as $key => $value) {
+                echo "$key => $value <br><br>";
+            }
+        } else {
+            echo '<p>Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+        }
+    } else {
+        echo '<br><p>le type du fichier n\'est pas autorisé !</p>';
+    }
+}
+
 ?>
 
 <h1>Demande de devis</h1>
@@ -32,7 +71,7 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
                     <label for="carteGrise">Photo carte grise</label><br>
                 </td>
                 <td>
-                    <input type="file" name="carteGrise" id="carteGrise"><br>
+                    <input type="file" name="carteGrise" id="carteGrise" VALUE="<?=$name?>"><br>
                 </td>
             </tr>
         </div>
@@ -68,3 +107,5 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
         </tr>
     </table>
 </form>
+<?php
+

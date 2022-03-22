@@ -45,12 +45,7 @@ if (isset($_FILES["fichierUtilisateur"])) {
             echo '<p>Une erreur s\'est produite lors de l\'upload du fichier!</p>';
         }
     } else {
-        echo '<br><p>le type du fichier n\'est pas autorisé !</p><style> p { color: red;
-}
-
-.success {
-color: limegreen;
-}</style>';
+        echo '<br><p>le type du fichier n\'est pas autorisé !</p>';
     }
 }
 
