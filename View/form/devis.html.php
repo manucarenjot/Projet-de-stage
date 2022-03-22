@@ -4,7 +4,7 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
 
 <h1>Demande de devis</h1>
 
-<form method="post" action="">
+<form method="post" action="?c=demande-de-devis">
     <table>
         <div>
             <tr>
@@ -19,7 +19,7 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
         <div>
             <tr>
                 <td>
-                    <label for="mail">Numéro de téléphone :</label><br>
+                    <label for="mail">E-mail :</label><br>
                 </td>
                 <td>
                     <input type="email" name="mail" id="mail"><br>

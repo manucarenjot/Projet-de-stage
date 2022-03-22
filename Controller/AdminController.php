@@ -65,6 +65,7 @@ class AdminController extends AbstractController
     public function devis()
     {
         $this->render('private/devis');
+
     }
 
     public function updateData() {
