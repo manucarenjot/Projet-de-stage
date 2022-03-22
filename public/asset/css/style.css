@@ -23,11 +23,13 @@ body {
     width: 944px;
 
 }
+
 .menu a {
     color: #c5c3c3;
     text-decoration-line: none;
 
 }
+
 .menu a:hover {
     color: #6aa602;
 }
@@ -37,6 +39,10 @@ body {
     color: #faf2f2;
     background-color: #525454;
     border-radius: 15px;
+}
+
+.fa-arrows-rotate {
+    width: 20px;
 }
 
 form {
@@ -133,6 +139,42 @@ h1, h2, h3, p, label {
 a {
     text-decoration-line: none;
     color: #c5c3c3;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    clear: both;
+    padding: 20px 20px 10px;
+    font-size: 0.9em;
+
+}
+
+.footer p {
+    color: #7f7f7f;
 }
 
 

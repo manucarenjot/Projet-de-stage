@@ -70,6 +70,16 @@ switch ($page) {
 
 
 ?>
+
+<div class="footer">
+    <a href="?c=home">| Acceuil |</a>
+    <a href="?c=realisations">Realisation |</a>
+    <a href="?c=demande-de-devis">Demande de devis |</a>
+    <a href="?c=contact">Contact |</a>
+    <a href="?c=espace-admin">Espace admin |</a>
+    <br>
+    <p>Copyright © 2012 − Carrosserie Proisy</p>
+</div>
 <script src="https://kit.fontawesome.com/d8438e7f2f.js" crossorigin="anonymous"></script>
 </body>
 </html>

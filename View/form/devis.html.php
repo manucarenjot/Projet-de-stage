@@ -24,7 +24,8 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
     <div>
         <label for="captcha">Entrer le texte du captcha :</label><br>
         <input name="captcha" type="text" id="captcha"><br>
-
         <img src="/captcha.php" alt="captcha de vérification"/>
+        <div><i class="fa-solid fa-arrows-rotate"></i></div>
     </div>
+    <input type="submit" name="send">
 </form>
