@@ -7,7 +7,7 @@
         <p>Veullez remplir tous les champs</p>
         <tr>
             <td align="right" width="30%">
-                <label for="name">Nom* :</label>
+                <label for="name">Nom :</label>
             </td>
             <td>
                 <input type="text" name="name" id="name">
@@ -17,7 +17,7 @@
         <br>
         <tr>
             <td align="right" width="30%">
-                <label for="firstname">Prenom* :</label>
+                <label for="firstname">Prenom :</label>
             </td>
             <td>
                 <input type="text" name="firstname" id="firstname">
@@ -27,7 +27,7 @@
         <br>
         <tr>
             <td align="right" width="30%">
-                <label for="mail">E-mail* :</label>
+                <label for="mail">E-mail :</label>
             </td>
             <td>
                 <input type="email" name="mail" id="mail">
@@ -37,7 +37,7 @@
         <br>
         <tr>
             <td align="right" width="50%">
-                <label for="phone-number">Numéro de téléphone* : </label>
+                <label for="phone-number">Numéro de téléphone : </label>
             </td>
             <td>
                 <input type="text" name="phone-number" id="phone-number">
