@@ -3,10 +3,6 @@
 use App\Routing\Router\Router;
 use App\Controller\ErrorController\ErrorController;
 
-session_start();
-
-
-
 
 require __DIR__ . '/../require.php';
 
@@ -30,7 +26,6 @@ require __DIR__ . '/../require.php';
     <a href="?c=espace-admin">Espace admin |</a>
 
 </div>
-
 <?php
 
 
