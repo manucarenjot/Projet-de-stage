@@ -15,7 +15,6 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
                     <input type="text" name="phone-number" id="phone-number"><br>
                 </td>
             </tr>
-
         </div>
         <div>
             <tr>
@@ -26,7 +25,6 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
                     <input type="email" name="mail" id="mail"><br>
                 </td>
             </tr>
-
         </div>
         <div>
             <tr>
@@ -37,7 +35,6 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
                     <input type="file" name="carteGrise" id="carteGrise"><br>
                 </td>
             </tr>
-
         </div>
         <div>
             <tr>
@@ -65,11 +62,9 @@ $_SESSION['captcha'] = mt_rand(1000, 9999);
                     <img src="/captcha.php" alt="captcha de vérification"/>
                 </td>
             </tr>
-
         </div>
         <tr>
             <td><input type="submit" name="send"></td>
         </tr>
-
     </table>
 </form>
