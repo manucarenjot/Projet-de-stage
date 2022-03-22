@@ -4,11 +4,10 @@ header('Content-type: image/png');
 session_start();
 $code=rand(1000,9999);
 $_SESSION["code"]=$code;
-$image = imagecreatetruecolor(70, 34);
+$image = imagecreatetruecolor(172, 34);
 $background = imagecolorallocate($image, 255, 255, 255);
 $forground = imagecolorallocate($image, 0, 0, 0);
 imagefill($image, 0, 0, $background);
-imagestring($image, 155, 15, 10,  $code, $forground);
-
+imagestring($image, 5, 70, 10,  $_SESSION['code'], $forground);
 imagepng($image);
 imagedestroy($image);

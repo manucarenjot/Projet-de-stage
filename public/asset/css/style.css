@@ -39,6 +39,11 @@ body {
     border-radius: 15px;
 }
 
+form {
+    user-input: 40px;
+
+}
+
 .gallerieImage {
 
     margin: 4px;
