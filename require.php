@@ -12,6 +12,7 @@ require __DIR__ . '/Models/manager/AdminManager.php';
 require __DIR__ . '/Models/manager/ImageManager.php';
 require __DIR__ . '/Models/manager/MessagerieManager.php';
 require __DIR__ . '/Models/manager/ServicesManager.php';
+require __DIR__ . '/Models/manager/DevisManager.php';
 
 require __DIR__ . '/Controller/AbstractController.php';
 require __DIR__ . '/Controller/AdminController.php';

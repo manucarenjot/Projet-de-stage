@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
+    $alerts = $_SESSION['alert'];
+    unset($_SESSION['alert']);
+
+    foreach ($alerts as $alert) {
+        echo $alert;
+    }
+}
 
 function getRandomName(string $regularName) {
     $infos = pathinfo($regularName);
@@ -10,6 +20,7 @@ function getRandomName(string $regularName) {
     }
     return bin2hex($bytes) . '.' . $infos['extension'];
 }
+
 
 ?>
 
@@ -102,10 +113,11 @@ function getRandomName(string $regularName) {
 
                     <label for="captchaImg">Captcha :</label><br>
 
-                    <img src="/captcha.php" alt="captcha de vérification"/>
+                    <img src="captcha.php" alt="captcha de vérification"/>
 
         </div>
 
             <td><input type="submit" name="send"></td>
 
 </form>
+<?php
