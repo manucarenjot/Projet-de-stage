@@ -28,5 +28,11 @@ abstract class AbstractController
 
    public function deletePicture($name) {
         unlink($name);
+        $alert = [];
+        $alert[] = '<div class="alert-succes">la photo a été supprimé</div>';
+       if(count($alert) > 0) {
+           $_SESSION['alert'] = $alert;
+           header('LOCATION: ?c=realisations');
+       }
    }
 }

@@ -26,10 +26,10 @@ $files = glob('uploads/*');
 foreach ($files as $filename) {
     echo '
 <form method="post" action="?c=realisations">
-<input type="text" name="filename" value="' . $filename . '">
-<input type="submit" name="deletePicture" value="❌">
+<input type="text" name="filename" value="' . $filename . '" style="display: none">
+<input type="submit" name="deletePicture" value="❌" title="Supprimer">
 </form>
-<img class="gallerieImage" src="' . $filename . ' " height="250"</img>';
+<img class="gallerieImage" src="' . $filename . ' "  style="max-width: 250px; max-height: 250px" </img>';
 }
 
 if (isset($_FILES["fichierUtilisateur"])) {
@@ -62,11 +62,13 @@ if (isset($_FILES["fichierUtilisateur"])) {
 }
 
 
+if (isset($_SESSION['admin'])) {
+
 
 ?>
 <form action="?c=realisations" method="post" enctype="multipart/form-data">
-    <label for="id-fichier" id="upfile1" style="cursor:pointer"><i class="fas fa-plus"></i></label>
-    <input type="file" name="fichierUtilisateur" id="id-fichier" style="display: none"/><br>
-    <input type="submit" value="Send"><br>
+    <input type="file" name="fichierUtilisateur" value="+" id="id-fichier" style="display: "/><br>
+    <input type="submit" value="Ajouter"><br>
 </form>
 <?php
+}
