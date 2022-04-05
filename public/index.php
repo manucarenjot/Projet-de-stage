@@ -2,7 +2,7 @@
 
 use App\Routing\Router\Router;
 use App\Controller\ErrorController\ErrorController;
-
+session_start();
 
 require __DIR__ . '/../require.php';
 

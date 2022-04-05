@@ -1,13 +1,14 @@
+
 <h1>Réalisations</h1>
 
 <?php
 
-function getRandomName(string $regularName) {
+function getRandomName(string $regularName)
+{
     $infos = pathinfo($regularName);
     try {
         $bytes = random_bytes(15);
-    }
-    catch (Exception $e) {
+    } catch (Exception $e) {
         $bytes = openssl_random_pseudo_bytes(15);
     }
     return bin2hex($bytes) . '.' . $infos['extension'];
@@ -22,9 +23,17 @@ function getRandomName(string $regularName) {
 <?php
 
 $files = glob('uploads/*');
-foreach($files as $filename){echo '<div style="display: flex; flex-direction: column;align-items: end; color: #f84f4f"><div><i class="fas fa-times-circle" style="width: 100%"></i></div><br><img class="gallerieImage" src="'. $filename . ' " height="250"</img></div>';}
+foreach ($files as $filename) {
+    echo '
+<form method="post" action="?c=realisations">
+<input type="text" name="filename" value="' . $filename . '">
+<input type="submit" name="deletePicture" value="❌">
+</form>
+<img class="gallerieImage" src="' . $filename . ' " height="250"</img>';
+}
 
 if (isset($_FILES["fichierUtilisateur"])) {
+    $alert = [];
     $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];
     if (in_array($_FILES['fichierUtilisateur']['type'], $allowedMimeTypes)) {
         if ($_FILES['fichierUtilisateur']['error'] === 0) {
@@ -35,18 +44,24 @@ if (isset($_FILES["fichierUtilisateur"])) {
                 mkdir('uploads', '0755');
             }
             move_uploaded_file($tmp_name, 'uploads/' . $name);
-            echo '<p class="success">upload réussi !</p><br>';
-            echo $name . '<br>';
-            foreach ($_FILES['fichierUtilisateur'] as $key => $value) {
-                echo "$key => $value <br><br>";
-            }
-        } else {
-            echo '<p>Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+
+            $alert[] = '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
+            header('LOCATION: ?c=realisations');
         }
+   else {
+        $alert[] = '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+    }
     } else {
-        echo '<br><p>le type du fichier n\'est pas autorisé !</p>';
+        $alert[] = '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier n\'est pas autorisé !</p>';
+
+    }
+    if(count($alert) > 0) {
+        $_SESSION['alert'] = $alert;
+        header('LOCATION: ?c=realisations');
     }
 }
+
+
 
 ?>
 <form action="?c=realisations" method="post" enctype="multipart/form-data">
