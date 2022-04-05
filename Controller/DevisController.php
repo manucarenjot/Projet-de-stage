@@ -19,8 +19,7 @@ class DevisController extends AbstractController
 // A travailler ça fonctionne pas
 
 
-
-            echo '<div>'.$phone . $mail . $greyCard. $carPicture . $captcha .'</div>';
+            
         }
     }
 }

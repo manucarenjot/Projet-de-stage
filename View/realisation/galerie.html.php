@@ -22,7 +22,7 @@ function getRandomName(string $regularName) {
 <?php
 
 $files = glob('uploads/*');
-foreach($files as $filename){echo '<img class="gallerieImage" src="'. $filename . ' " height="250"</img>';}
+foreach($files as $filename){echo '<div> x <br><img class="gallerieImage" src="'. $filename . ' " height="250"</img> </div>';}
 
 if (isset($_FILES["fichierUtilisateur"])) {
     $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];

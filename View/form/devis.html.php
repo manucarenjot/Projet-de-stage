@@ -55,10 +55,10 @@ function getRandomName(string $regularName) {
                             echo $name . '<br>';
 
                         } else {
-                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier de la carte grise!</p><br>';
                         }
                     } else {
-                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier n\'est pas autorisé !</p>';
+                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier de la carte grise n\'est pas autorisé !</p><br>';
                     }
                 }
                 ?>
@@ -85,10 +85,10 @@ function getRandomName(string $regularName) {
                             echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
                             $_SESSION['photoVoiture'] = $name;
                         } else {
-                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier de la photo de la voiture!</p><br>';
                         }
                     } else {
-                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier n\'est pas autorisé !</p>';
+                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier de la photo de la voiture n\'est pas autorisé !</p><br>';
                     }
                 }
             ?>
