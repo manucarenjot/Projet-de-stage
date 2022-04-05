@@ -8,7 +8,6 @@ require __DIR__ . '/Connect.php';
 require __DIR__ . '/Models/entity/AbstractEntity.php';
 require __DIR__ . '/Models/entity/Admin.php';
 
-
 require __DIR__ . '/Models/manager/AdminManager.php';
 require __DIR__ . '/Models/manager/ImageManager.php';
 require __DIR__ . '/Models/manager/MessagerieManager.php';
