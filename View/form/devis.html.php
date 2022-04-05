@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     $alerts = $_SESSION['alert'];
