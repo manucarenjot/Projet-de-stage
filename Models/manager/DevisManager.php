@@ -17,6 +17,7 @@ class DevisManager {
             $alert[] = '<div class="alert-succes">Demande de devis envoyé !</div>';
             if(count($alert) > 0) {
                 $_SESSION['alert'] = $alert;
+                header('LOCATION: ?c=demande-de-devis');
             }
         }
     }
