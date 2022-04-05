@@ -36,7 +36,7 @@ function getRandomName(string $regularName) {
 
                     <label for="carteGrise">Photo carte grise</label><br>
 
-                    <input type="file" name="carteGrise" id="carteGrise" VALUE="<?= $name ?>"><br>
+                    <input type="file" name="carteGrise" id="carteGrise"><br>
 
                 <?php
                 if (isset($_FILES['carteGrise'])) {
@@ -51,16 +51,14 @@ function getRandomName(string $regularName) {
                             }
                             move_uploaded_file($tmp_name, 'uploads/' . $name);
 
-                            echo '<p class="success">upload réussi !</p><br>';
+                            echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
                             echo $name . '<br>';
-                            foreach ($_FILES['carteGrise'] as $key => $value) {
-                                echo "$key => $value <br><br>";
-                            }
+
                         } else {
-                            echo '<p>Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier!</p>';
                         }
                     } else {
-                        echo '<br><p>le type du fichier n\'est pas autorisé !</p>';
+                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier n\'est pas autorisé !</p>';
                     }
                 }
                 ?>
@@ -84,16 +82,13 @@ function getRandomName(string $regularName) {
                             }
                             move_uploaded_file($tmp_name, 'uploads/' . $name);
 
-                            echo '<p class="success">upload réussi !</p><br>';
+                            echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
                             $_SESSION['photoVoiture'] = $name;
-                            foreach ($_FILES['photoVoiture'] as $key => $value) {
-                                echo "$key => $value <br><br>";
-                            }
                         } else {
-                            echo '<p>Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier!</p>';
                         }
                     } else {
-                        echo '<br><p>le type du fichier n\'est pas autorisé !</p>';
+                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier n\'est pas autorisé !</p>';
                     }
                 }
             ?>
