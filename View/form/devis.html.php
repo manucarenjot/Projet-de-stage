@@ -57,10 +57,10 @@ function getRandomName(string $regularName) {
                             $tmp_name = $_FILES['carteGrise']["tmp_name"];
 
                             $name = getRandomName($_FILES['carteGrise']["name"]);
-                            if (!is_dir('uploads')) {
-                                mkdir('uploads', '0755');
+                            if (!is_dir('devis')) {
+                                mkdir('devis', '0755');
                             }
-                            move_uploaded_file($tmp_name, 'uploads/' . $name);
+                            move_uploaded_file($tmp_name, 'devis/' . $name);
 
                             echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
                             $_SESSION['carteGrise'] = $name;
@@ -88,10 +88,10 @@ function getRandomName(string $regularName) {
                             $tmp_name = $_FILES['photoVoiture']["tmp_name"];
 
                             $name = getRandomName($_FILES['photoVoiture']["name"]);
-                            if (!is_dir('uploads')) {
-                                mkdir('uploads', '0755');
+                            if (!is_dir('devis')) {
+                                mkdir('devis', '0755');
                             }
-                            move_uploaded_file($tmp_name, 'uploads/' . $name);
+                            move_uploaded_file($tmp_name, 'devis/' . $name);
 
                             echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
                             $_SESSION['photoVoiture'] = $name;
