@@ -72,30 +72,30 @@ function getRandomName(string $regularName) {
 
                     <input type="file" name="photoVoiture" id="photoVoiture"><br>
             <?php
-            if (isset($_FILES['photoVoiture'])) {
-                $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];
-                if (in_array($_FILES['photoVoiture']['type'], $allowedMimeTypes)) {
-                    if ($_FILES['photoVoiture']['error'] === 0) {
-                        $tmp_name = $_FILES['photoVoiture']["tmp_name"];
+    if (isset($_FILES['photoVoiture'])) {
+                    $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];
+                    if (in_array($_FILES['photoVoiture']['type'], $allowedMimeTypes)) {
+                        if ($_FILES['photoVoiture']['error'] === 0) {
+                            $tmp_name = $_FILES['photoVoiture']["tmp_name"];
 
-                        $name = getRandomName($_FILES['photoVoiture']["name"]);
-                        if (!is_dir('uploads')) {
-                            mkdir('uploads', '0755');
-                        }
-                        move_uploaded_file($tmp_name, 'uploads/' . $name);
+                            $name = getRandomName($_FILES['photoVoiture']["name"]);
+                            if (!is_dir('uploads')) {
+                                mkdir('uploads', '0755');
+                            }
+                            move_uploaded_file($tmp_name, 'uploads/' . $name);
 
-                        echo '<p class="success">upload réussi !</p><br>';
-                        echo $name . '<br>';
-                        foreach ($_FILES['photoVoiture'] as $key => $value) {
-                            echo "$key => $value <br><br>";
+                            echo '<p class="success">upload réussi !</p><br>';
+                            $_SESSION['photoVoiture'] = $name;
+                            foreach ($_FILES['photoVoiture'] as $key => $value) {
+                                echo "$key => $value <br><br>";
+                            }
+                        } else {
+                            echo '<p>Une erreur s\'est produite lors de l\'upload du fichier!</p>';
                         }
                     } else {
-                        echo '<p>Une erreur s\'est produite lors de l\'upload du fichier!</p>';
+                        echo '<br><p>le type du fichier n\'est pas autorisé !</p>';
                     }
-                } else {
-                    echo '<br><p>le type du fichier n\'est pas autorisé !</p>';
                 }
-            }
             ?>
 
         </div>

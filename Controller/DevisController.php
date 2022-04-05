@@ -9,10 +9,15 @@ class DevisController extends AbstractController
         if ($this->getPost()) {
             $phone = $_POST['phone-number'];
             $mail = $_POST['mail'];
-            $greyCard = $_POST['carteGrise'];
-            $carPicture = $_POST['photoVoiture'];
+            if (isset($_SESSION['carteGrise'])) {
+                $greyCard = $_SESSION['carteGrise'];
+            }
+            if (isset($_SESSION['photoVoiture'])) {
+                $carPicture = $_SESSION['photoVoiture'];
+            }
             $captcha = $_POST['captcha'];
 // A travailler ça fonctionne pas
+
 
 
             echo '<div>'.$phone . $mail . $greyCard. $carPicture . $captcha .'</div>';
