@@ -16,6 +16,12 @@ class DevisController extends AbstractController
             if (empty($_POST['mail'])) {
                 $alert[] = '<div class="alert-error">il manque un champs</div>';
             }
+            if (empty($_SESSION['carteGrise'])) {
+                $alert[] = '<div class="alert-error">il manque la carte grise !</div>';
+            }
+            if (empty($_SESSION['photoVoiture'])) {
+                $alert[] = '<div class="alert-error">il manque la photo du véhicule à refaire !</div>';
+            }
 
             if (!preg_match("/\\+[0-9][0-9][0-9]( [0-9][0-9])+|([0-9]+)$/", trim($_POST['phone-number']))) {
                 $alert[] = '<div class="alert-error">Le numéro de téléphone ne doit contenir que des chiffres</div>';
@@ -28,11 +34,14 @@ class DevisController extends AbstractController
             if ($captcha != $_SESSION['captcha']) {
                 $alert[] = '<div class="alert-error">Le captcha est incorrect !' . $captcha . ' ' . $_SESSION['captcha'];
             }
-            if (isset($_SESSION['carteGrise'])) {
-                $greyCard = $_SESSION['carteGrise'];
-            }
-            if (isset($_SESSION['photoVoiture'])) {
-                $carPicture = $_SESSION['photoVoiture'];
+            else {
+
+                if (isset($_SESSION['carteGrise']) and isset($_SESSION['photoVoiture'])) {
+                    $greyCard = $_SESSION['carteGrise'];
+                    $carPicture = $_SESSION['photoVoiture'];
+                    DevisManager::addDevis($phone, $mail, $greyCard, $carPicture);
+                }
+
             }
             if(count($alert) > 0) {
                 $_SESSION['alert'] = $alert;

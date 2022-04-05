@@ -63,7 +63,7 @@ function getRandomName(string $regularName) {
                             move_uploaded_file($tmp_name, 'uploads/' . $name);
 
                             echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
-                            echo $name . '<br>';
+                            $_SESSION['carteGrise'] = $name;
 
                         } else {
                             echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier de la carte grise!</p><br>';
