@@ -27,11 +27,15 @@ class ServicesManager
                 <div class="services">
                     <h3 class="services-titre"><?= $data['title'] ?></h3>
                     <p class="services-paragraphe"><?= $data['description'] ?></p>
+                    <?php
+                    if (isset($_SESSION['admin'])) {
+                    ?>
                     <form method="post" action="?c=home&id=<?=$data['id']?>">
-                        <input type="submit" name="delete" id="delete" value="&#45">
+                        <input type="submit" name="delete" id="delete" value="❌">
                     </form>
                 </div>
                 <?php
+                    }
                 $_SESSION['service-id'] = $data;
             }
 
