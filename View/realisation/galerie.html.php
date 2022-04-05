@@ -22,7 +22,7 @@ function getRandomName(string $regularName) {
 <?php
 
 $files = glob('uploads/*');
-foreach($files as $filename){echo '<div> x <br><img class="gallerieImage" src="'. $filename . ' " height="250"</img> </div>';}
+foreach($files as $filename){echo '<div style="display: flex; align-items: end; color: #f84f4f">X</div><br><img class="gallerieImage" src="'. $filename . ' " height="250"</img>';}
 
 if (isset($_FILES["fichierUtilisateur"])) {
     $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];
@@ -35,7 +35,6 @@ if (isset($_FILES["fichierUtilisateur"])) {
                 mkdir('uploads', '0755');
             }
             move_uploaded_file($tmp_name, 'uploads/' . $name);
-
             echo '<p class="success">upload réussi !</p><br>';
             echo $name . '<br>';
             foreach ($_FILES['fichierUtilisateur'] as $key => $value) {
@@ -55,3 +54,5 @@ if (isset($_FILES["fichierUtilisateur"])) {
     <input type="file" name="fichierUtilisateur" id="id-fichier" style="display: none"/><br>
     <input type="submit" value="Send"><br>
 </form>
+<?php
+require  __DIR__. '/../../public/footer.php';

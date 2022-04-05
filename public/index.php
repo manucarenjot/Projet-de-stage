@@ -70,7 +70,6 @@ switch ($page) {
 
 
 ?>
-
 <div class="footer">
     <a href="?c=home">| Acceuil |</a>
     <a href="?c=realisations">Realisation |</a>
@@ -83,4 +82,5 @@ switch ($page) {
 <script src="https://kit.fontawesome.com/d8438e7f2f.js" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
