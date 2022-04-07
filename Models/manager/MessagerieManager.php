@@ -29,20 +29,21 @@ class MessagerieManager
                 <?php
                 foreach ($datas = $select->fetchAll() as $data) {
                     ?>
-                    <p>_</p><br>
+
                     <div class="coordonner">
-                        <a href="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">- <?= $data['name'] ?>  <?= $data['firstname'] ?></a>
                         <form method="post" action="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">
-                            <input type="submit" name="delete" id="delete" value="&#45">
+                            <input type="submit" name="delete" id="delete" value="❌">
                         </form>
+                        <a href="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">- <?= $data['name'] ?>  <?= $data['firstname'] ?></a>
                     </div>
                     <?php
                 }
 
                 ?>
-            </div>
 
+            </div>
             <?php
+
         }
         else {
             $alert[] = '<div class="alert-error">Aucun messages trouvé !</div>';

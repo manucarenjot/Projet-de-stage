@@ -73,6 +73,8 @@ h4 {
     float: left;
     font-size: 1.3em;
     text-transform: uppercase;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .menu a:hover {
@@ -112,8 +114,7 @@ form {
 
 .gallerieImage:hover {
     cursor: pointer;
-
-    border: solid 8px #fff3f3;
+    border: solid 8px #ffffff;
 }
 
 .addPicture {
@@ -126,38 +127,32 @@ form {
 }
 
 .messagerie {
-    width: 90%;
+    min-width: 60%;
     border: 5px solid #6aa602;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .message {
     background-color: #000000;
-    border: 5px solid #6aa602;
     color: #ded3d3;
     padding: 30px;
     font-size: 1.2em;
-    width: 80%;
+    width: 60%;
     word-break: break-word;
     white-space: normal;
-
 }
-
-.message p {
-    color: #c5c3c3;
-}
-
 
 .coordonner a {
     text-decoration-line: none;
     color: #ded3d3;
     font-size: 1.2em;
-    background-color: #000000;
-    border: 2px solid #c9c9c9;
-    padding: 15px;
     margin: 10px;
+    border-bottom: #faf2f2 solid 1px;
 }
 
 .coordonner a:hover {
@@ -170,9 +165,8 @@ form {
 }
 
 .expediteur {
-    width: 20%;
+    width: 40%;
     float: start;
-    border: 5px solid #6aa602;
     background-color: #000000;
 }
 
@@ -196,7 +190,7 @@ form {
     font-weight: bold;
 }
 
-h1, h2, h3, p, label {
+h1, h2, h3, label {
     color: #6aa602;
 }
 
@@ -225,9 +219,8 @@ td {
     vertical-align: inherit;
 }
 
-
 .footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -239,6 +232,10 @@ td {
 
 .footer p {
     color: #7f7f7f;
+}
+
+input[type=submit] {
+    cursor: pointer;
 }
 
 
