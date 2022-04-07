@@ -198,6 +198,7 @@ a {
     text-decoration-line: none;
     color: #c5c3c3;
 }
+
 table {
     display: table;
     border-collapse: separate;
@@ -206,14 +207,17 @@ table {
     border-spacing: 2px;
     border-color: grey;
 }
+
 tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
 }
+
 tr {
     display: table-row;
 }
+
 td {
     display: table-cell;
     vertical-align: inherit;
@@ -239,6 +243,162 @@ input[type=submit] {
 }
 
 
+@media screen and (max-width: 900px) {
+    body {
+        font: 0.74em Tahoma, Verdana, Sans-Serif, Arial;
+    }
 
+    h1 {
+        font: normal 2.4em "Trebuchet MS", Helvetica, Arial;
+    }
+
+    h2 {
+        font: normal 1.2em "Trebuchet MS", Helvetica, Arial;
+        margin: 0 0 15px;
+    }
+
+    h3 {
+        font: normal 1em "Trebuchet MS", Helvetica, Arial;
+        margin: 0 0 20px;
+    }
+
+    h4 {
+        font: normal 0.8em "Trebuchet MS", Helvetica, Arial;
+        margin: 0 0 4px;
+    }
+
+    .logo {
+        float: left;
+        padding: 30px 15px;
+    }
+
+    .pitch {
+        background-image: url(../img/pitch320p.jpg);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 150px;
+        background-color: black;
+        padding: 0 0 0 0;
+    }
+
+    .fontPitch {
+        width: 100%;
+        height: 20px;
+    }
+
+    .menu {
+        width: 100%;
+        height: 24px;
+        margin: 40px 0 0 4px;
+    }
+
+    .menu a {
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        padding-inline-start: 5px;
+        font-size: 0.74em;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    .add-service {
+        width: 90%;
+    }
+
+    #description {
+        width: 80%;
+    }
+
+    .services {
+        width: 80%;
+    }
+
+    .fa-plus {
+        font-size: 100px;
+        border-radius: 15px;
+    }
+
+    .fa-arrows-rotate {
+        width: 20px;
+    }
+
+    form {
+        width: 80%;
+        user-input: 40px;
+    }
+
+    .devis {
+        text-align: center;
+    }
+
+    .gallerie {
+        width: 100%;
+    }
+
+    .gallerieImage {
+        max-width: 90%;
+        max-height: 320px;
+        margin: 10px;
+    }
+
+    .addPicture {
+        width: 80%;
+        padding: 5px;
+        margin: 30px;
+    }
+
+    .messagerie {
+        min-width: 90%;
+        border-radius: 15px;
+        padding: 10px;
+        background-color: black;
+    }
+
+    .message {
+        padding: 30px;
+        font-size: 1.2em;
+        width: 60%;
+    }
+
+    .coordonner a {
+        font-size: 0.8em;
+        margin: 10px;
+    }
+
+    .expediteur {
+        width: 40%;
+    }
+
+    .alert-error {
+        width: 40%;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .alert-succes {
+        width: 40%;
+        text-align: center;
+        border-radius: 15px;
+        font-size: large;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        clear: both;
+        padding: 20px 20px 10px;
+        font-size: 0.9em;
+    }
+
+    #message {
+        width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+    }
+}
 
 

@@ -26,7 +26,7 @@ function getRandomName(string $regularName) {
 
 <h1>Demande de devis</h1>
 
-<form method="post" action="?c=demande-de-devis" enctype="multipart/form-data">
+<form method="post" action="?c=demande-de-devis" enctype="multipart/form-data" class="devis">
 
         <div>
 
