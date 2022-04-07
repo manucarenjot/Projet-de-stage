@@ -78,6 +78,7 @@ switch ($page) {
 
 
 ?>
+</div>
 <div class="footer">
     <a href="?c=home">| Acceuil |</a>
     <a href="?c=realisations">Realisation |</a>

@@ -74,7 +74,7 @@
 </div>
 <br>
 <br>
-<div>
+<div class="map">
     <h2>Par Courrier / nous rejoindre</h2>
     <br>
     <p>Rue Périseau 12 6460 Villers-La-Tour</p>
