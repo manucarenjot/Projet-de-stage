@@ -48,18 +48,37 @@ body {
 
 form {
     user-input: 40px;
+}
 
+.gallerie {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallerieImage {
-
-    margin: 4px;
+    max-width: 720px;
+    max-height: 900px;
+    margin: 10px;
 }
 
 .gallerieImage:hover {
     cursor: pointer;
 
-    border: solid 8px #424141;
+    border: solid 8px #fff3f3;
+}
+
+.addPicture {
+    text-align: center;
+    width: 15%;
+    border: solid #74f300 3px;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 30px;
 }
 
 .messagerie {
@@ -177,6 +196,7 @@ td {
 .footer p {
     color: #7f7f7f;
 }
+
 
 
 

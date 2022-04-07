@@ -1,4 +1,3 @@
-
 <h1>Réalisations</h1>
 
 <?php
@@ -15,23 +14,29 @@ function getRandomName(string $regularName)
 }
 
 ?>
+<div class="addPicture">
+    <form action="?c=realisations" method="post" enctype="multipart/form-data">
+        <input type="file" name="fichierUtilisateur" value="+" id="id-fichier" style="display: "/><br>
+        <input type="submit" value="Ajouter"><br>
+    </form>
+</div>
 
 
+<div class="gallerie">
+    <?php
 
-
-
-<?php
-
-$files = glob('uploads/*');
-foreach ($files as $filename) {
-    echo '
+    $files = glob('uploads/*');
+    foreach ($files as $filename) {
+        echo '<div>
 <form method="post" action="?c=realisations">
 <input type="text" name="filename" value="' . $filename . '" style="display: none">
 <input type="submit" name="deletePicture" value="❌" title="Supprimer">
 </form>
-<img class="gallerieImage" src="' . $filename . ' "  style="max-width: 250px; max-height: 250px" </img>';
-}
-
+<img class="gallerieImage" src="' . $filename . ' "   </img></div>';
+    }
+    ?>
+</div>
+<?php
 if (isset($_FILES["fichierUtilisateur"])) {
     $alert = [];
     $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];
@@ -47,15 +52,14 @@ if (isset($_FILES["fichierUtilisateur"])) {
 
             $alert[] = '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
             header('LOCATION: ?c=realisations');
+        } else {
+            $alert[] = '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier!</p>';
         }
-   else {
-        $alert[] = '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier!</p>';
-    }
     } else {
         $alert[] = '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier n\'est pas autorisé !</p>';
 
     }
-    if(count($alert) > 0) {
+    if (count($alert) > 0) {
         $_SESSION['alert'] = $alert;
         header('LOCATION: ?c=realisations');
     }
@@ -65,10 +69,8 @@ if (isset($_FILES["fichierUtilisateur"])) {
 if (isset($_SESSION['admin'])) {
 
 
-?>
-<form action="?c=realisations" method="post" enctype="multipart/form-data">
-    <input type="file" name="fichierUtilisateur" value="+" id="id-fichier" style="display: "/><br>
-    <input type="submit" value="Ajouter"><br>
-</form>
-<?php
+    ?>
+
+
+    <?php
 }
