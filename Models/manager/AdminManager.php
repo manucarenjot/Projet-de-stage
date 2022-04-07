@@ -15,7 +15,12 @@ class AdminManager extends Admin
         if ($admin) {
             if (password_verify($password, $admin['password'])) {
                 $_SESSION['admin'] = $admin;
+                $alert[] = '<div class="alert-succes">Bonjour ' . $admin['username'].'</div>. ';
+                if(count($alert) > 0) {
+                    $_SESSION['alert'] = $alert;
+                }
                 header('LOCATION: ?c=espace-admin');
+
             }
             else {
                 $alert[] = '<div class="alert-error">Adresse e-mail ou mot de passe invalide !</div>';

@@ -28,7 +28,7 @@ class AdminController extends AbstractController
                 header('LOCATION: ?c=espace-admin&a=update-profil');
             }
             else {
-                $username = trim(strip_tags($_POST['username']));
+                $username = trim(htmlentities($_POST['username']));
                 $mail = trim(strip_tags(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)));
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $id = $_SESSION['admin']['id'];

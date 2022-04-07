@@ -32,7 +32,7 @@ class DevisController extends AbstractController
             }
 
             if ($captcha != $_SESSION['captcha']) {
-                $alert[] = '<div class="alert-error">Le captcha est incorrect !' . $captcha . ' ' . $_SESSION['captcha'];
+                $alert[] = '<div class="alert-error">Le captcha est incorrect !' . $captcha . ' ' . $_SESSION['captcha'] . '</div>';
             }
             else {
 

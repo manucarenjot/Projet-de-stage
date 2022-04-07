@@ -10,12 +10,12 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     }
 }
 
-function getRandomName(string $regularName) {
+function getRandomName(string $regularName)
+{
     $infos = pathinfo($regularName);
     try {
         $bytes = random_bytes(15);
-    }
-    catch (Exception $e) {
+    } catch (Exception $e) {
         $bytes = openssl_random_pseudo_bytes(15);
     }
     return bin2hex($bytes) . '.' . $infos['extension'];
@@ -24,30 +24,30 @@ function getRandomName(string $regularName) {
 
 ?>
 
-<h1>Demande de devis</h1>
+    <h1>Demande de devis</h1>
+    <div>
+        <form method="post" action="?c=demande-de-devis" enctype="multipart/form-data" class="devis">
 
-<form method="post" action="?c=demande-de-devis" enctype="multipart/form-data" class="devis">
+            <div>
 
-        <div>
+                <label for="phone-number">Numéro de téléphone :</label><br>
 
-                    <label for="phone-number">Numéro de téléphone :</label><br>
+                <input type="text" name="phone-number" id="phone-number"><br>
 
-                    <input type="text" name="phone-number" id="phone-number"><br>
+            </div>
+            <div>
 
-        </div>
-        <div>
+                <label for="mail">E-mail :</label><br>
 
-                    <label for="mail">E-mail :</label><br>
-
-                    <input type="email" name="mail" id="mail"><br>
+                <input type="email" name="mail" id="mail"><br>
 
 
-        </div>
-        <div>
+            </div>
+            <div>
 
-                    <label for="carteGrise">Photo carte grise</label><br>
+                <label for="carteGrise">Photo carte grise (format autorisé 'jpg/png')</label><br>
 
-                    <input type="file" name="carteGrise" id="carteGrise"><br>
+                <input type="file" name="carteGrise" id="carteGrise"><br>
 
                 <?php
                 if (isset($_FILES['carteGrise'])) {
@@ -62,26 +62,26 @@ function getRandomName(string $regularName) {
                             }
                             move_uploaded_file($tmp_name, 'devis/' . $name);
 
-                            echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
+                            echo '<div class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</div><br>';
                             $_SESSION['carteGrise'] = $name;
 
                         } else {
-                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier de la carte grise!</p><br>';
+                            echo '<div class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier de la carte grise!</div><br>';
                         }
                     } else {
-                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier de la carte grise n\'est pas autorisé !</p><br>';
+                        echo '<br><div class="alert-error" style="font-size: 1em; width: 100%">le type du fichier de la carte grise n\'est pas autorisé !</div><br>';
                     }
                 }
                 ?>
 
-        </div>
-        <div>
+            </div>
+            <div>
 
-                    <label for="photoVoiture">Photo de la partie du véhicule à refaire </label><br>
+                <label for="photoVoiture">Photo de la partie du véhicule à refaire (format autorisé 'jpg/png')</label><br>
 
-                    <input type="file" name="photoVoiture" id="photoVoiture"><br>
-            <?php
-    if (isset($_FILES['photoVoiture'])) {
+                <input type="file" name="photoVoiture" id="photoVoiture"><br>
+                <?php
+                if (isset($_FILES['photoVoiture'])) {
                     $allowedMimeTypes = ['text/plain', 'image/jpeg', 'image/png'];
                     if (in_array($_FILES['photoVoiture']['type'], $allowedMimeTypes)) {
                         if ($_FILES['photoVoiture']['error'] === 0) {
@@ -93,31 +93,32 @@ function getRandomName(string $regularName) {
                             }
                             move_uploaded_file($tmp_name, 'devis/' . $name);
 
-                            echo '<p class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</p><br>';
+                            echo '<div class="alert-succes" style="font-size: 1em; width: 100%">upload réussi !</div><br>';
                             $_SESSION['photoVoiture'] = $name;
                         } else {
-                            echo '<p class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier de la photo de la voiture!</p><br>';
+                            echo '<div class="alert-error" style="font-size: 1em; width: 100%">Une erreur s\'est produite lors de l\'upload du fichier de la photo de la voiture!</div><br>';
                         }
                     } else {
-                        echo '<br><p class="alert-error" style="font-size: 1em; width: 100%">le type du fichier de la photo de la voiture n\'est pas autorisé !</p><br>';
+                        echo '<br><div class="alert-error" style="font-size: 1em; width: 100%">le type du fichier de la photo de la voiture n\'est pas autorisé !</div><br>';
                     }
                 }
-            ?>
+                ?>
 
-        </div>
-        <div>
+            </div>
+            <div>
 
-                    <label for="captcha">Entrer le texte du captcha :</label><br>
+                <label for="captcha">Entrer le texte du captcha :</label><br>
 
-                    <input name="captcha" type="text" id="captcha"><br>
+                <input name="captcha" type="text" id="captcha"><br>
 
-                    <label for="captchaImg">Captcha :</label><br>
+                <label for="captchaImg">Captcha :</label><br>
 
-                    <img src="captcha.php" alt="captcha de vérification"/>
+                <img src="captcha.php" alt="captcha de vérification"/>
 
-        </div>
+            </div>
 
             <td><input type="submit" name="send"></td>
 
-</form>
+        </form>
+    </div>
 <?php

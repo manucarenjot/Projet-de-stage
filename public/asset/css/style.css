@@ -243,6 +243,19 @@ input[type=submit] {
     cursor: pointer;
 }
 
+.alert-succes, .alert-error {
+    animation: fade 15s steps(90) forwards;
+    -webkit-animation: fade 15s steps(90) forwards;
+    -moz-animation: fade 15s steps(90) forwards;
+    -o-animation: fade 15s steps(90) forwards;;
+}
+
+@keyframes fade {
+    0% {margin-top: -10px;opacity:0;}
+    15%   { margin-top: 0;opacity:1; }
+    100% {opacity:0; }
+}
+
 
 @media screen and (max-width: 900px) {
     body {
