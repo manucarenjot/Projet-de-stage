@@ -10,25 +10,69 @@ body {
     background-color: #7f7f7f;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    align-content: space-around;
     color: #faf2f2;
+    font: 0.74em Tahoma, Verdana, Sans-Serif, Arial;
+}
+
+h1 {
+    font: normal 3.4em "Trebuchet MS", Helvetica, Arial;
+    color: #b6d434;
+}
+
+h2 {
+    font: normal 1.8em "Trebuchet MS", Helvetica, Arial;
+    color: #b6d434;
+    margin: 0 0 15px;
+}
+
+h3 {
+    font: normal 1.4em "Trebuchet MS", Helvetica, Arial;
+    margin: 0 0 20px;
+}
+
+h4 {
+    font: normal 1.2em "Trebuchet MS", Helvetica, Arial;
+    color: #b6d434;
+    margin: 0 0 4px;
+}
+
+.logo {
+    float: left;
+    padding: 30px 15px;
+}
+
+.pitch {
+    background-image: url(../img/pitch.jpg);
+    background-repeat: no-repeat;
+    width: 944px;
+    height: 243px;
+    padding: 60px 360px 0 30px;
+
+}
+
+.fontPitch {
+    width: 944px;
+    background-color: #000000;
+    padding: 20px;
 }
 
 .menu {
-    background-image: url(../img/pitch.jpg);
-    background-color: #131313;
-    height: 288px;
-    background-repeat: no-repeat;
     width: 944px;
-
+    height: 44px;
+    margin: 40px 0 0 4px;
+    background-color: #000000;
 }
 
 .menu a {
     color: #c5c3c3;
     text-decoration-line: none;
-
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    float: left;
+    font-size: 1.3em;
+    text-transform: uppercase;
 }
 
 .menu a:hover {

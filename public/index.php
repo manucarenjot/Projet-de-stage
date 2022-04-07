@@ -2,6 +2,7 @@
 
 use App\Routing\Router\Router;
 use App\Controller\ErrorController\ErrorController;
+
 session_start();
 
 require __DIR__ . '/../require.php';
@@ -15,17 +16,24 @@ require __DIR__ . '/../require.php';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="asset/css/style.css">
-    <title>Carrosserie Proissy</title>
+    <title>Carrosserie Proisy</title>
 </head>
 <body>
+<div class="logo">
+    <h1>Carrosserie proisy</h1>
+</div>
+
 <div class="menu">
-    <a href="?c=home">| Acceuil |</a>
-    <a href="?c=realisations">Realisation |</a>
-    <a href="?c=demande-de-devis">Demande de devis |</a>
-    <a href="?c=contact">Contact |</a>
-    <a href="?c=espace-admin">Espace admin |</a>
+    <a href="?c=home"> Acceuil </a>
+    <a href="?c=realisations">Realisation </a>
+    <a href="?c=demande-de-devis">Demande de devis </a>
+    <a href="?c=contact">Contact </a>
+    <a href="?c=espace-admin">Espace admin </a>
+</div>
+<div class="pitch">
 
 </div>
+<div class="fontPitch"></div>
 <?php
 
 
