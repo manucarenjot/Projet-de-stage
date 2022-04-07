@@ -34,8 +34,10 @@ class MessagerieManager
                         <form method="post" action="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">
                             <input type="submit" name="delete" id="delete" value="❌">
                         </form>
+                        <br>
                         <a href="?c=espace-admin&a=messages&id=<?= $data['id'] ?>">- <?= $data['name'] ?>  <?= $data['firstname'] ?></a>
                     </div>
+                    <br>
                     <?php
                 }
 
